@@ -11,6 +11,9 @@ This demo application showcases a Kubernetes architecture that includes the foll
 
 The application demonstrates how a user can hit an external IP address, which allows the external Kubernetes service to communicate with the Mongo Express pod, which in turn connects to the internal MongoDB service, ultimately communicating with the MongoDB pod where the database resides.
 
+Use the workspace-startup.sh script to remove related components
+Use the workspace-delete.sh script to remove related components
+
 ## File Structure
 
 The project contains the following YAML files:
