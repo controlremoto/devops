@@ -37,7 +37,7 @@ Review the `main.tf` file. This configuration deploys an Ubuntu EC2 instance pub
 
 main.tf
 
-```json
+```tf
 provider "aws" {
   region = var.aws_region
 }
@@ -200,7 +200,7 @@ This file is the JSON encoded state that Terraform writes and reads at each oper
 
 The `resources` section of the state file contains the schema for any resources you create in Terraform. Review the `resources` section of this file.
 
-```json
+```tf
   "resources": [
     {
       "mode": "data",
@@ -224,7 +224,7 @@ The first key in this schema is the `mode`. Mode refers to the type of resource 
 
 ## FIXME
 
-```json
+```tf
 ##...
     {
       "mode": "managed",
@@ -266,7 +266,7 @@ The `instances` section in this resource contains the `attributes` of the resour
 
 Terraform also marks dependencies between resources in state with the built-in dependency tree logic.
 
-```json
+```tf
 ##...
           "dependencies": [
             "aws_security_group.sg_8080",
@@ -555,7 +555,7 @@ guarantee to take exactly these actions if you run "terraform apply" now.
 
 Open the `main.tf` file in your root directory. Copy and paste the resource definition below.
 
-```json
+```tf
 resource "aws_instance" "example_new" {
   ami                    = data.aws_ami.ubuntu.id
   instance_type          = "t2.micro"
@@ -640,7 +640,7 @@ Comment out the entire `resource "aws_instance" "example_new"` block from `main.
 
 main.tf
 
-```json
+```tf
 removed {
   from = aws_instance.example_new
 
@@ -749,7 +749,7 @@ Import the instance back into your project. First, uncomment the `aws_instance.e
 
 main.tf
 
-```json
+```tf
 # removed {
 #   from = aws_instance.example_new
 
@@ -892,7 +892,7 @@ Remove the original `aws_instance.example` resource from `main.tf`.
 
 main.tf
 
-```json
+```tf
 - resource "aws_instance" "example" {
 -   ami                    = data.aws_ami.ubuntu.id
 -   instance_type          = "t2.micro"
@@ -916,7 +916,7 @@ Open `outputs.tf` and remove the output values that reference the instance.
 
 outputs.tf
 
-```json
+```tf
 - output "instance_id" {
 -   value = aws_instance.example.id
 - }
@@ -1023,7 +1023,7 @@ The state file is empty. No resources are represented.
 
 Open the `terraform.tfstate` file in your file editor. The empty `resources` attribute confirms Terraform destroyed all your previous resources.
 
-```json
+```tf
 {
   "version": 4,
   "terraform_version": "1.7.0",
