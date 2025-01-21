@@ -7,12 +7,13 @@ This demo application showcases a Kubernetes architecture that includes the foll
 - Pods
 - Services
 - Deployments
-- Ingress
+- ConfigMap
+- Secrets
 
 The application demonstrates how a user can hit an external IP address, which allows the external Kubernetes service to communicate with the Mongo Express pod, which in turn connects to the internal MongoDB service, ultimately communicating with the MongoDB pod where the database resides.
 
-Use the workspace-startup.sh script to remove related components
-Use the workspace-delete.sh script to remove related components
+Use the `workspace-startup.sh` script to create related components
+Use the `workspace-delete.sh` script to remove related components
 
 ## File Structure
 
@@ -44,3 +45,8 @@ This file contains the configuration for deploying the Mongo Express pod. Mongo 
 ### 4. MongoDB ConfigMap (`mongo-configmap.yaml`)
 
 This file defines the configuration map for MongoDB. It contains non-sensitive configuration data that the MongoDB pod needs to function correctly.
+
+## Troubleshooting
+
+- If you use minikube, don't forget to start your `minikube tunnel`.
+- For POC purpose the `ME_CONFIG_BASICAUTH` has been configured to `false`, this is not recommended on live environments.

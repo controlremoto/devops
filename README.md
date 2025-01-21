@@ -7,6 +7,7 @@ This repository contains best practices and examples for DevOps, including Infra
 - **Infrastructure-as-code/**: Contains IaC examples using Terraform and Pulumi.
 - **Scripting/**: Contains operational scripts for various tasks.
 - **Pipelines/**: Contains CI/CD pipeline configurations for GitLab CI and GitHub Actions.
+- **Containerized application/**: Contains basic POC for containerized applications (dockers / Kubernetes).
 - **Docs/**: Contains documentation for each section.
 
 ## Getting Started
