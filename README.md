@@ -12,12 +12,20 @@ This repository contains best practices and examples for DevOps, including Infra
 ## Getting Started
 
 1. Clone the repository:
+
     ```sh
     git clone git@github.com:controlremoto/devops.git
     cd devops-practices
     ```
 
 2. Follow the instructions in the respective directories to set up and use the examples.
+
+3. Copy hooks/commit-msg git hook to your local .git repository folder and make it executable. This hook will enforce the use of conventional commit for a better readibility. For more information go to <https://www.conventionalcommits.org/en/v1.0.0/>
+
+    ```sh
+    cp hooks/commit-msg .git/hooks/commit-msg
+    chmod +x .git/hooks/commit-msg
+    ```
 
 ## Contributing
 
